@@ -2,7 +2,7 @@
 
 Trendyol Üzerinden İstediğiniz Kategoriden, Satıcıdan veya Aramadan Ürün Çekebiliyorsunuz.
 
-Ürün İsmi, Fiyatı, Görseller, Bulunduğu Kategori, Ücretsiz Kargo Durumunu ve Ürünün URL'sini Görebiliyorsunuz
+Ürün İsmi, Fiyatı, Görseller, Bulunduğu Kategori, Ücretsiz Kargo Durumunu ve Ürünün URL'sini Görebiliyorsunuz ve Excel çıktısı alabiliyorsunuz.
 
 ## Nasıl Kullanılır
 
