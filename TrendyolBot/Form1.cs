@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -42,6 +44,7 @@ namespace TrendyolBot
                             {
                                 string isim = (string)MyParser["result"]["products"][j]["name"];
                                 string fiyat = (string)MyParser["result"]["products"][j]["price"]["sellingPrice"];
+                                string satici = (string)MyParser["result"]["products"][j]["brand"]["name"];
                                 string resim = "";
                                 string kategori = (string)MyParser["result"]["products"][j]["categoryHierarchy"];
                                 bool kargo = false;
@@ -51,15 +54,42 @@ namespace TrendyolBot
                                     kargo = true;
                                 }
 
-                                var resimler = MyParser["result"]["products"][0]["images"].Values<string>().ToArray();
+                                var resimler = MyParser["result"]["products"][j]["images"].Values<string>().ToArray();
                                 foreach (var item in resimler)
                                 {
-                                    resim += "https://cdn.dsmcdn.com/" + item + ":";
+                                    resim += "https://cdn.dsmcdn.com/" + item + "}";
+                                }
+
+
+
+                                var id = (string)MyParser["result"]["products"][j]["id"];
+
+                                RestClient cli = new RestClient("https://public.trendyol.com/discovery-web-productgw-service/api/product-detail/" + id + "/html-content");
+                                RestRequest req = new RestRequest("", Method.GET);
+                                req.AddHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8");
+
+
+                                IRestResponse restResponsee = cli.Execute(req);
+                                JObject MyParser2 = JObject.Parse(restResponsee.Content);
+                                string conn = "";
+                                if ((string)MyParser2["statusCode"] == "200")
+                                {
+                                    conn = (string)MyParser2["result"];
+
+                                    conn = conn.Replace(@"id=""rich-content-wrapper""", "");
+                                }
+
+
+                                string aciklama = conn;
+                                if (checkBox1.Checked)
+                                {
+                                    aciklama = HtmlToText(conn);
+
                                 }
 
                                 sayi++;
 
-                                dataGridView1.Rows.Add(sayi, isim, fiyat, resim, kategori, kargo.ToString(), url);
+                                dataGridView1.Rows.Add(sayi, isim, fiyat, satici, aciklama, resim, kategori, kargo.ToString(), url);
                             }
                             catch (Exception ex)
                             {
@@ -85,14 +115,17 @@ namespace TrendyolBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.ColumnCount =7;
+            dataGridView1.ColumnCount = 9;
             dataGridView1.Columns[0].Name = "Sayı";
             dataGridView1.Columns[1].Name = "Ürün İsmi";
             dataGridView1.Columns[2].Name = "Ürün Fiyatı";
-            dataGridView1.Columns[3].Name = "Ürün Fotoğrafları";
-            dataGridView1.Columns[4].Name = "Kategori";
-            dataGridView1.Columns[5].Name = "Ücretsiz Kargo";
-            dataGridView1.Columns[6].Name = "Ürün Url";
+            dataGridView1.Columns[3].Name = "Ürün Satıcısı";
+            dataGridView1.Columns[4].Name = "Ürün Açıklaması";
+            dataGridView1.Columns[5].Name = "Ürün Fotoğrafları";
+            dataGridView1.Columns[6].Name = "Kategori";
+            dataGridView1.Columns[7].Name = "Ücretsiz Kargo";
+            dataGridView1.Columns[8].Name = "Ürün Url";
+
         }
         public static void ExcelD(DataGridView dataGridView1)
         {
@@ -139,5 +172,29 @@ namespace TrendyolBot
         {
             ExcelD(dataGridView1);
         }
+
+
+        private static string HtmlToText(string html)
+        {
+            const string tagWhiteSpace = @"(>|$)(\W|\n|\r)+<";//matches one or more (white space or line breaks) between '>' and '<'
+            const string stripFormatting = @"<[^>]*(>|$)";//match any character between '<' and '>', even when end tag is missing
+            const string lineBreak = @"<(br|BR)\s{0,1}\/{0,1}>";//matches: <br>,<br/>,<br />,<BR>,<BR/>,<BR />
+            var lineBreakRegex = new Regex(lineBreak, RegexOptions.Multiline);
+            var stripFormattingRegex = new Regex(stripFormatting, RegexOptions.Multiline);
+            var tagWhiteSpaceRegex = new Regex(tagWhiteSpace, RegexOptions.Multiline);
+
+            var text = html;
+            //Decode html specific characters
+            text = System.Net.WebUtility.HtmlDecode(text);
+            //Remove tag whitespace/line breaks
+            text = tagWhiteSpaceRegex.Replace(text, "><");
+            //Replace <br /> with line breaks
+            text = lineBreakRegex.Replace(text, Environment.NewLine);
+            //Strip formatting
+            text = stripFormattingRegex.Replace(text, string.Empty);
+
+            return text;
+        }
+
     }
 }

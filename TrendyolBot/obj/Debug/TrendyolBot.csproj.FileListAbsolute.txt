@@ -33,3 +33,38 @@ E:\Program Files (x86)\repos2\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.cspr
 E:\Program Files (x86)\repos2\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.exe
 E:\Program Files (x86)\repos2\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.pdb
 E:\Program Files (x86)\repos2\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.ResolveComReference.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\TrendyolBot.exe.config
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\TrendyolBot.exe
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\TrendyolBot.pdb
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\Newtonsoft.Json.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\RestSharp.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Buffers.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Memory.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Numerics.Vectors.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Text.Encodings.Web.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Text.Json.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.ValueTuple.dll
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\Newtonsoft.Json.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\RestSharp.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Buffers.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Memory.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Numerics.Vectors.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Text.Encodings.Web.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Text.Json.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\bin\Debug\System.ValueTuple.xml
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.AssemblyReference.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.SuggestedBindingRedirects.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.ResolveComReference.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.Form1.resources
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.Properties.Resources.resources
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.GenerateResource.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.CoreCompileInputs.cache
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.csproj.CopyComplete
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.exe
+D:\Genel\repos\TrendyolBot\TrendyolBot\obj\Debug\TrendyolBot.pdb
